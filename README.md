@@ -2,6 +2,9 @@
 Using plain JavaScript and HTML, CSS simple authendication system setup.
 Login screen using email and google authenticator with google firebase
 
+![image](https://github.com/gokuldhas/Loginsetup/assets/6180538/8a880cc0-2bcb-43ee-9188-1645ae0d3d26)
+
+
 # How to run
 1. check out the repo
 2. Setup firebase project
