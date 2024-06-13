@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Login sample with firebase">
+    <meta name="keywords" content="Login, Google login, HTML, CSS, JavaScript">
+    <meta name="author" content="Gokul Dhas Simson">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login App</title>    
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" rel="stylesheet"/> -->
+    <link href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <section class="ui segment loading" id="main-view"> 
+        <!-- FORGOT PASSWORD -->
+        <div class="ui segment big" id="reset-password-form">
+            <h1>Reset your password</h1>
+            <p>Enter your email address to reset your password</p>
+            <div class="ui message small hidden" id="reset-msg"></div>
+            <form class="ui form big">
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="mail icon"></i>
+                        <input type="email" placeholder="Email" id="reset-password-email">
+                    </div>
+                </div>
+                <button class="ui button red big" id="reset-password-btn">Reset Password</button>
+            </form>
+        </div>
+
+        <!-- EMAIL VERIFICATION -->
+         <div class="ui segment big" id="email-verification">
+            <div class="ui card fluid">
+                <div class="content">
+                    <div class="header">Verification Email Sent ! <i class="icon check green"></i></div>
+                    <div class="meta">We've sent an email for verification. Please click the link in the email and confirm. </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui button red small" id="verification-resend-btn">Resent</button>
+                </div>
+
+            </div>
+         </div>
+
+        <!-- USER PROFILE -->
+        <div class="ui segment big" id="user-profile">
+            <div class="ui card fluid">
+                <div class="content">
+                    <div class="header">
+                        User Profile
+                    </div>
+                    <div class="meta" id="user-email">
+                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui button red big"  id="logout-btn">Log out</button>
+                </div> 
+            </div>
+                    
+        </div>
+        <!-- LOG IN FORM -->
+        <div class="ui segment grey" id="login-form">
+            <form class="ui form big">
+                <div class="ui stacked segment">
+                    <h1>Login</h1>
+
+                    <button class="ui google plus button fluid big" id="login-with-google-btn">
+                        <i class="google icon"></i>
+                        Login with google 
+                    </button>
+                    
+                    <div class="ui horizontal divider">or</div>
+
+                    <div class="ui error message big" id="login-error-msg"></div>
+                    <!-- email -->
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input type="email" placeholder="Email" id="login-email"/>
+                        </div>
+                    </div>
+                    <!-- password -->
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" placeholder="Password" id="login-password"/>
+                        </div>
+                    </div>
+                    <button class="ui button blue fluid" id="login-btn">LOG IN</button>
+                    <br />
+                    <a id="forgot-password-btn">Forgot Password</a>
+                </div>
+            </form>
+            <div class="ui message big">Need an account ? <a id="need-an-account-btn">Sign up</a></div>
+        </div>
+        <!-- SIGN UP FORM -->
+        <div class="ui segment grey" id="signup-form">
+            <form class="ui form big">
+                <div class="ui stacked segment">
+                    <h1>Create new account</h1>
+                    <div class="ui error message" id="error-msg"></div>
+                    <!-- EMAIL -->
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="mail icon"></i>
+                            <input type="email" placeholder="Email" id="email"/>
+                        </div>
+                    </div>
+                    <!-- PASSWORD -->
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" placeholder="Password" id="password"/>
+                        </div>
+                    </div>
+                    <button class="ui button green fluid" id="signup-btn">Create Account</button>
+                </div>
+            </form>
+            <div class="ui message big">Already have an account ? <a id="have-an-account-btn">Log In</a></div>
+        </div>
+    </section>
+    <script src="firebase.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>

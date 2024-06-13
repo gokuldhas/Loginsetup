@@ -1,0 +1,42 @@
+section{
+    height: 100vh;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    cursor: pointer;
+}
+
+#signup-form{
+    width: 400px;
+    text-align: center;
+    display:none;
+}
+
+#login-form{
+    display:none;
+    width: 400px;
+    text-align: center;
+}
+
+#user-profile{
+    display:none;
+    width: 400px;
+}
+
+#email-verification{
+    display: none;
+    width: 400px;
+}
+
+#forgot-password-btn{
+    font-size: 17px;
+    text-decoration: underline;
+}
+
+#reset-password-form{
+    display: none;
+}
