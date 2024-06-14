@@ -31,3 +31,9 @@ Login screen using email and google authenticator with google firebase
 8.  Click -> Project Overview -> Settings
 9.  Click -> Web (</> icon) -> Give name for web App (hosting is optional not required) and register app
 10.  Select -> Use a <script> tag and copy the code without script tag (<script ) past into firebase.js
+
+#### License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+#### Author
+[Gokul Dhas Simson](https://www.linkedin.com/in/gokuldhas/)
