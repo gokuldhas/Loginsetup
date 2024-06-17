@@ -1,9 +1,12 @@
 import { 
     getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, sendEmailVerification,
     sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup
-} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js"
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
+
+import { getFirestore, doc, setDoc  } from "https://gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
 const auth = getAuth();
+const db = getFirestore();
 
 const email = document.getElementById("email");
 const password = document.getElementById("password");
@@ -28,6 +31,8 @@ const UI_reset_password_btn = document.getElementById("reset-password-btn");
 const UI_reset_password_email = document.getElementById("reset-password-email");
 const UI_reset_msg = document.getElementById("reset-msg");
 const UI_login_with_google_btn = document.getElementById("login-with-google-btn");
+const UI_signup_user_name = document.getElementById("name");
+const UI_signup_user_phone = document.getElementById("phone");
 
 onAuthStateChanged(auth, (user) =>{
     console.log(user);
@@ -70,6 +75,14 @@ const singnUpClicked = async (e)=>{
         }
         UI_user_email.innerHTML = userCredential.user.email;
         await sendEmailVerification(userCredential.user);
+
+        const docRef = doc(db, "users", userCredential.uid);
+        await setDoc(docRef,{
+            name: UI_signup_user_name.value,
+            phone_number:UI_signup_user_phone.value,
+            email:UI_user_email.value
+        });
+        
         console.log(userCredential);
     }catch(error){
         console.log(error);
