@@ -3,7 +3,7 @@ import {
     sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js";
 
-import { getFirestore, doc, setDoc  } from "https://gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc  } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
 const auth = getAuth();
 const db = getFirestore();
@@ -76,14 +76,13 @@ const singnUpClicked = async (e)=>{
         UI_user_email.innerHTML = userCredential.user.email;
         await sendEmailVerification(userCredential.user);
 
-        const docRef = doc(db, "users", userCredential.uid);
-        await setDoc(docRef,{
+        const docRef = doc(db, "users", userCredential.user.uid);
+        await setDoc(docRef, {
             name: UI_signup_user_name.value,
             phone_number:UI_signup_user_phone.value,
-            email:UI_user_email.value
+            email:userCredential.user.email
         });
         
-        console.log(userCredential);
     }catch(error){
         console.log(error);
         UI_error_msg.innerHTML = formateErrorMsg(error.code,"register");
