@@ -38,8 +38,8 @@
                 </div>
                 <div class="extra content">
                     <button class="ui button red small" id="verification-resend-btn">Resent</button>
+                    <button class="ui button red small" id="email-verification-logout">Log out</button>
                 </div>
-
             </div>
          </div>
 
@@ -50,9 +50,38 @@
                     <div class="header">
                         User Profile
                     </div>
-                    <div class="meta" id="user-email">
-                    </div>
+                    <div class="meta" id="user-email"></div>
                 </div>
+                <div class="ui message small hidden" id="update-msg"></div>
+                <form class="ui form big">
+                    <div class="ui stacked segment">
+                        <!-- PROFILE IMAGE -->
+                         <label for="update-image-file-input">
+                            <img class="ui centered circular image" id="profile-picture-img"></img>
+                         </label>                        
+                         <input type="file" id="update-image-file-input" style="display: none;">
+
+                        <div class="field">
+                            <div class="ui left icon input big">
+                                <i class="user icon"></i>
+                                <input type="text" placeholder="Name" id="update-name"/>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input big">
+                                <i class="phone icon"></i>
+                                <input type="number" placeholder="Phone" id="update-phone"/>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input big">
+                                <i class="mail icon"></i>
+                                <input type="email" placeholder="Email" id="update-email"/>
+                            </div>
+                        </div>
+                        <button class="ui button blue fluid big" id="update-btn">Update</button>
+                    </div>
+                </form>
                 <div class="extra content">
                     <button class="ui button red big"  id="logout-btn">Log out</button>
                 </div> 
@@ -100,6 +129,13 @@
                 <div class="ui stacked segment">
                     <h1>Create new account</h1>
                     <div class="ui error message" id="error-msg"></div>
+                    <!-- PROFILE PICTURE -->
+                     <div class="field">
+                        <div class="ui left icon input big">
+                            <i class="image icon"></i>
+                            <input type="file" id="image-file-input"/>
+                        </div>
+                     </div>
                     <!-- NAME -->
                     <div class="field">
                         <div class="ui left icon input big">
